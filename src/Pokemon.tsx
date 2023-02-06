@@ -1,6 +1,14 @@
 import "./Pokemon.css"
+import React from "react"
 
-function Pokemon({ name, id, type, baseExperience }) {
+interface PropsInterface {
+  id: number,
+  name: String,
+  type: String,
+  baseExperience: number
+}
+
+const Pokemon:React.FC<PropsInterface> = ({ name, id, type, baseExperience }) =>{
   return (
     <div className="Pokemon-card">
       <h5 className="Pokemon-header">{name}</h5>

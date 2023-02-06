@@ -1,8 +1,22 @@
 import _ from "underscore";
 import Pokedex from "./Pokedex";
+import React from "react"
 
-function Pokegame({ pokemons }) {
 
+interface ProfileInterface {
+  id: number,
+  name: String,
+  type: String,
+  base_experience: number
+}
+
+interface PropsInterface {
+  pokemons: ProfileInterface[]
+}
+
+
+
+const Pokegame: React.FC<PropsInterface> = ({pokemons}) =>{
   const shuffledList = _.shuffle(pokemons);
 
   const hand1 = shuffledList.slice(0, 4);
